@@ -10,5 +10,5 @@ $View = App::process()
 
 $View->assign('BUNDLE_HASH', filemtime(getenv('VAR_DIR') . '/bundle.css'));
 
-$Response->send((string) $View->render());
+Response::current()->send((string) $View->render());
 App::stop();
