@@ -4,6 +4,7 @@ const postcssWillChange = require('postcss-will-change')
 const postcssAssets = require('postcss-assets')
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
+const tailwindcss = require('tailwindcss')
 
 // PostCSS
 const autoprefixerPlugin = require('autoprefixer')({
@@ -134,6 +135,7 @@ module.exports = {
                   combineMediaQuery,
                   sortMediaQueries,
                   // fix100vh(),
+                  tailwindcss,
                   autoprefixerPlugin,
                   cssnano
                 ].filter(Boolean)
