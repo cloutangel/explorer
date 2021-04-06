@@ -1,0 +1,7 @@
+volumes:
+  - ${SOURCE_PATH}/app/client:/src
+  - env-storage:/src/env:rw
+entrypoint: ["yarn"]
+command:
+  - run
+  - watch

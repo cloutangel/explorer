@@ -8,5 +8,7 @@ $View = App::process()
   ->append('_foot')
 ;
 
+$View->assign('BUNDLE_HASH', filemtime(getenv('VAR_DIR') . '/bundle.css'));
+
 $Response->send((string) $View->render());
 App::stop();
