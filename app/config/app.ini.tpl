@@ -1,8 +1,8 @@
 [common]
 ; Алфавит для кодирование чисел по словарю
-alphabet    = 'nGWZFAQcUxV2fqJtMmyR7BHwPXNrL9DijhCsvuaezpTS3gEdk546Yb8K'
+alphabet    = 'Rs85bJvMywcTHVt34xfr26aXgUeCKzGNp7j9ZmFkdYuSBEiQnDWALhPq'
 epoch       = 1617703188000
-secret      = '2'
+secret      = '3d55b71bbeacd9eb4c0b19312b6d874317b68b40513f72157848cf35e897238b'
 
 trigger_map_file   = '{{CONFIG_DIR}}/trigger_event_map.php'
 trigger_param_file = '{{CONFIG_DIR}}/trigger_param_map.php'
@@ -13,16 +13,13 @@ action_map_file    = '{{CONFIG_DIR}}/action_map.php'
 upload_max_filesize = '10M'
 
 proto = 'http'
-domain = '{{PROJECT}}.lo'
+domain = 'explorer.cloutangle.lo'
 
-lang_type = 'path' ; path or domain or none depends what we use for split
+lang_type = 'none' ; path or domain or none depends what we use for split
 languages[] = 'en'
 
-[common:test]
-domain = '{{PROJECT}}.dev'
-
 [common:production]
-domain = '{{PROJECT}}.ru'
+domain = 'explorer.cloutangel.com'
 
 [default]
 action = 'home'
@@ -46,7 +43,7 @@ save_depth    = 2 ; this config used only for handler=files
 save_path     = "{{TMP_DIR}}/{{PROJECT_REV}}/sessions"
 
 [nginx]
-port = 80
+port = 8000
 auth_name = 'test'
 auth_pass = 'test'
 ; auth_basic nginx param: off, Restricted
