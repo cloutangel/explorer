@@ -1,0 +1,10 @@
+FROM nginx:1.19.7-alpine
+LABEL maintainer="Muvon Co. Ltd <contact@muvon.io>"
+
+RUN mkdir /var/cache/nginx/client_temp /var/cache/nginx/fastcgi_temp \
+  /var/cache/nginx/proxy_temp /var/cache/nginx/scgi_temp /var/cache/nginx/uwsgi_temp
+COPY . /src
+WORKDIR /src
+
+ENTRYPOINT ["/src/docker/containers/nginx/entrypoint"]
+CMD [""]
