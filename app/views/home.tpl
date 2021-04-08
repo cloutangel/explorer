@@ -1,4 +1,4 @@
-<h1>Latest blocks</h1>
+<h1>Latest block: {block_height}</h1>
 <table>
   <thead>
     <th>Height</th>
