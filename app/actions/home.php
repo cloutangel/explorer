@@ -6,5 +6,5 @@
 $api = container('api');
 
 $block_height = result($api->getBLockCount());
-$block_heights = range($block_height - 5, $block_height);
+$block_heights = array_reverse(range($block_height - 8, $block_height));
 $blocks = array_values(result($api->getBlockList($block_heights)));
