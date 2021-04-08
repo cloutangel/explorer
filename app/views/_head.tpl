@@ -23,7 +23,7 @@
   <title>Bitclout blockchain explorer | Cloutangel</title>
 </head>
 <body class="font-mono">
-  <grid>
+  <grid class="header">
     <cell span="2" m-span="12">
       <a href="/">CloutAngel explorer</a>
     </cell>

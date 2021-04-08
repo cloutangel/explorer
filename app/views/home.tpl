@@ -3,7 +3,7 @@
   <thead>
     <th>Height</th>
     <th class="hash">Hash</th>
-    <th>Transactions</th>
+    <th>Tx count</th>
     <th class="datetime">Time</th>
   </thead>
   <tbody>
