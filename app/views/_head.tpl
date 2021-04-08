@@ -7,8 +7,7 @@
   <meta name="robots" content="noarchive"/>
   <meta name="googlebot" content="noarchive"/>
   <link rel="stylesheet" type="text/css" href="/bundle-{BUNDLE_HASH}.css"/>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.png"/>
-  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"/>
+  <link rel="icon" type="application/svg+xml" href="/img/favicon.svg"/>
   <script type="text/javascript">
     //<![CDATA[
     if (window.top !== window.self) {document.write = '';window.top.location = window.self.location; setTimeout(function(){document.body.innerHTML='';},1);window.self.onload=function(evt){document.body.innerHTML='';};}
