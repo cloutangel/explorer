@@ -45,7 +45,6 @@
     "style-loader": "^2.0.0",
     "svg-transform-loader": "^2.0.13",
     "svg-url-loader": "^7.1.1",
-    "tailwindcss": "^2.1.1",
     "terser-webpack-plugin": "^5.1.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.26.1",
