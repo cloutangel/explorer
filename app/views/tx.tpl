@@ -45,5 +45,5 @@
   {>_tx_io_list}
 {/tx}
 {err}
-  <p>Cannot load transaction: {hash}}</p>
+  <p>Cannot load transaction: {hash}</p>
 {/err}

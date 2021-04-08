@@ -1,6 +1,6 @@
 <?php
 /**
- * @route tx/(3J[a-zA-Z0-9]+): hash
+ * @route tx/(3J[a-zA-Z0-9]{52}): hash
  * @param string $hash
  */
 
