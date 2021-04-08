@@ -6,8 +6,8 @@
 
 if ($search) {
   $ns = match (true) {
-    str_starts_with('BC1', $search) => 'address',
-    str_starts_with('3J', $search) => 'tx',
+    str_starts_with($search, 'BC1') => 'address',
+    str_starts_with($search, '3J') => 'tx',
     trim($search, '0..9') === '' => 'block',
     strlen($search) === 64 && trim($search, 'a-f0-9') === '' => 'blockhash',
     default => 'username',
