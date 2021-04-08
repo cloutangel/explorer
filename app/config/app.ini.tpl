@@ -43,7 +43,7 @@ save_depth    = 2 ; this config used only for handler=files
 save_path     = "{{TMP_DIR}}/{{PROJECT_REV}}/sessions"
 
 [nginx]
-port = 8000
+port = 8001
 auth_name = 'test'
 auth_pass = 'test'
 ; auth_basic nginx param: off, Restricted
@@ -51,6 +51,7 @@ auth = 'off'
 open_file_cache = 'off'
 
 [nginx:production]
+port = 8001
 open_file_cache = 'max=100000 inactive=600s'
 
 [nginx:test]

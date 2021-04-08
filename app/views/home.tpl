@@ -1,4 +1,19 @@
-<p>Welcome to KISSCore</p>
-<p>Fast and robust skeleton for web apps</p>
-<p>It works with PHP 8+ only and uses Yoda as running and deployment tool</p>
-<p>#lang_text#</p>
+<h1>Latest blocks</h1>
+<table>
+  <thead>
+    <th>Height</th>
+    <th class="hash">Hash</th>
+    <th>Transactions</th>
+    <th class="datetime">Time</th>
+  </thead>
+  <tbody>
+    {blocks}
+      <tr>
+        <td><a href="/block/{Header.Height}">{Header.Height}</a></td>
+        <td>{Header.BlockHashHex}</td>
+        <td>{Transactions:count}</td>
+        <td>{Header.TstampSecs:datetime}</td>
+      </tr>
+    {/blocks}
+  </tbody>
+</table>
