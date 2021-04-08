@@ -1,0 +1,32 @@
+{
+  "name": "muvon/kiss-binary-codec",
+  "description": "Binary codec for encoding multiple structures with predefined config",
+  "keywords": [
+    "binary",
+    "codec",
+    "kiss",
+    "encoder",
+    "decoder",
+    "lightweight"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Muvon Co. Ltd",
+      "email": "contact@muvon.io"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpunit/phpunit": "^10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Muvon\\KISS\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  }
+}
