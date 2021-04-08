@@ -31,7 +31,7 @@
       <form>
         <grid class="input-group">
           <cell span="10" m-span="8">
-            <input class="focus:outline-none border-2 border-r-0 rounded rounded-r-none p-2 border-solid border-blue-500 w-full" type="text" name="" value="" placeholder="Address, tx hash, block height"/>
+            <input class="focus:outline-none border-2 border-r-0 rounded rounded-r-none p-2 border-solid border-blue-500 w-full" type="text" name="" value="" placeholder="Address, tx hash, block height or hash, username"/>
           </cell>
           <cell span="2" m-span="4">
             <input class="border-2 border-l-0 rounded rounded-l-none p-2 eborder-solid border-blue-500 w-full bg-blue-400 text-white cursor-pointer" type="submit" name="button" value="Go"/>
