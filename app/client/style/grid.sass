@@ -1,0 +1,86 @@
+grid
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  --grid-s: 1
+  justify-content: center
+  align-items: center
+
+grid>cell
+  display: block
+  appearance: none
+
+grid>cell[span]
+  grid-column-end: span var(--grid-s)
+
+grid>cell[span="1"]
+  --grid-s: 1
+
+grid>cell[span="2"]
+  --grid-s: 2
+
+grid>cell[span="3"]
+  --grid-s: 3
+
+grid>cell[span="4"]
+  --grid-s: 4
+
+grid>cell[span="5"]
+  --grid-s: 5
+
+grid>cell[span="6"]
+  --grid-s: 6
+
+grid>cell[span="7"]
+  --grid-s: 7
+
+grid>cell[span="8"]
+  --grid-s: 8
+
+grid>cell[span="9"]
+  --grid-s: 9
+
+grid>cell[span="10"]
+  --grid-s: 10
+
+grid>cell[span="11"]
+  --grid-s: 11
+
+grid>cell[span="12"]
+  --grid-s: 12
+
+@media only screen and (max-width: 600px)
+  grid>cell[m-span="1"]
+    --grid-s: 1
+
+  grid>cell[m-span="2"]
+    --grid-s: 2
+
+  grid>cell[m-span="3"]
+    --grid-s: 3
+
+  grid>cell[m-span="4"]
+    --grid-s: 4
+
+  grid>cell[m-span="5"]
+    --grid-s: 5
+
+  grid>cell[m-span="6"]
+    --grid-s: 6
+
+  grid>cell[m-span="7"]
+    --grid-s: 7
+
+  grid>cell[m-span="8"]
+    --grid-s: 8
+
+  grid>cell[m-span="9"]
+    --grid-s: 9
+
+  grid>cell[m-span="10"]
+    --grid-s: 10
+
+  grid>cell[m-span="11"]
+    --grid-s: 11
+
+  grid>cell[m-span="12"]
+    --grid-s: 12

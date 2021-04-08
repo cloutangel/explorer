@@ -1,0 +1,26 @@
+*
+  box-sizing: border-box
+
+body
+  max-width: 960px
+
+.input-group
+  input
+    width: 100%
+
+  cell:first-child>input
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+
+  cell:last-child>input
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+
+@media only screen and (max-width: 600px)
+  body
+    width: 100%
+
+  table
+    width: auto
+    max-width: 100%
+    overflow-x: auto

@@ -47,6 +47,7 @@
     "svg-url-loader": "^7.1.1",
     "terser-webpack-plugin": "^5.1.1",
     "url-loader": "^4.1.1",
+    "water.css": "^2.0.0",
     "webpack": "^5.26.1",
     "webpack-cli": "^4.5.0",
     "whatwg-fetch": "^3.6.2"
