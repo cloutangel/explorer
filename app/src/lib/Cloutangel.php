@@ -44,7 +44,7 @@ final class Cloutangel {
   }
 
   public function getAddressInfo(string $address, int $offset = 0, int $limit = 100) {
-    return $this->call('address/get/' . $address, ['offset' => $offset, 'limit' => $limit]);
+    return $this->call('address/get/' . $address, ['expand' => true, 'offset' => $offset, 'limit' => $limit]);
   }
 
   protected function call(string $method, array $params = [], $http_method = 'GET') {

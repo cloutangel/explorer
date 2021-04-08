@@ -19,13 +19,7 @@
     {/user.avatar}
   </grid>
   <h2>Transactions</h2>
-  <ul>
-    {txs}
-      <li>
-        <a href="/tx/{this}">{this}</a>
-      </li>
-    {/txs}
-  </ul>
+  {>_tx_list Transactions=txs}
 {/info}
 {err}
   <p>Cannot load address info: {address}</p>
