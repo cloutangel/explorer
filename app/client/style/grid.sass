@@ -5,11 +5,11 @@ grid
   justify-content: center
   align-items: center
 
-grid>cell
+grid>cell, grid>row
   display: block
   appearance: none
 
-grid>cell[span]
+grid>cell[span], grid>row
   grid-column-end: span var(--grid-s)
 
 grid>cell[span="1"]
@@ -45,7 +45,7 @@ grid>cell[span="10"]
 grid>cell[span="11"]
   --grid-s: 11
 
-grid>cell[span="12"]
+grid>cell[span="12"], grid>row
   --grid-s: 12
 
 @media only screen and (max-width: 600px)
@@ -82,5 +82,5 @@ grid>cell[span="12"]
   grid>cell[m-span="11"]
     --grid-s: 11
 
-  grid>cell[m-span="12"]
+  grid>cell[m-span="12"], grid>row
     --grid-s: 12
