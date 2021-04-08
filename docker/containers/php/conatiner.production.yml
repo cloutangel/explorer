@@ -1,0 +1,2 @@
+extra_hosts:
+  - 'api.cloutangel.com:127.0.0.1'
