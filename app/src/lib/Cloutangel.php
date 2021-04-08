@@ -24,7 +24,7 @@ final class Cloutangel {
   }
 
   public function getBlock(int|string $height) {
-    return $this->call('block/get/' . $height);
+    return $this->call('block/get/' . $height, ['expand' => true]);
   }
 
   public function getBlockList(array $heights) {
