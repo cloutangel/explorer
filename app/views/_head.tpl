@@ -23,10 +23,10 @@
 </head>
 <body class="font-mono">
   <grid class="header">
-    <cell span="2" m-span="12">
-      <a href="/">CloutAngel explorer</a>
+    <cell span="1">
+      <a href="/"><img src="/img/favicon.svg" width="64" height="64"/></a>
     </cell>
-    <cell span="10" m-span="12">
+    <cell span="11">
       <form>
         <grid class="input-group">
           <cell span="10" m-span="8">
