@@ -8,10 +8,10 @@
       <b>Block hash:</b> {Header.BlockHashHex}
     </li>
     <li>
-      <b>Prev block hash:</b> <a href="/?search={Header.PrevBlockHashHex}">{Header.PrevBlockHashHex}</a>
+      <b>Prev block hash:</b> <a href="/block/{Header.PrevBlockHashHex}">{Header.PrevBlockHashHex}</a>
     </li>
     <li>
-      <b>Transactions count:</b> {Transactions:count}
+      <b>Transactions count:</b> {TransactionCount}
     </li>
     <li>
       <b>Time:</b> {Header.TstampSecs:datetime}
