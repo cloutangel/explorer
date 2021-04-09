@@ -23,8 +23,8 @@ final class Cloutangel {
     return $this->call('block/height');
   }
 
-  public function getBlock(int|string $height) {
-    return $this->call('block/get/' . $height, ['expand' => true]);
+  public function getBlock(int|string $height, int $offset = 0, int $limit = 100) {
+    return $this->call('block/get/' . $height, ['expand' => true, 'offset' => $offset, 'limit' => $limit]);
   }
 
   public function getBlockList(array $heights) {
