@@ -47,7 +47,7 @@
       <h3>Creator token info</h3>
       <ul>
         <li><b>Operation:</b> {OperationType}</li>
-        <li><b>Amount to sell:</b> {BitCloutToSellNanos:amount} Bitcout</li>
+        <li><b>Amount to sell:</b> {BitCloutToSellNanos:amount} Bitclout</li>
         <li><b>Creator tokens to sell:</b> {CreatorCoinToSellNanos:amount} Token</li>
       </ul>
     {/CreatorCoinTxindexMetadata}
