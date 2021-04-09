@@ -24,14 +24,25 @@
         {/AffectedPublicKeys}
       </tbody>
     </table>
-    <h3>Basic transfer info</h3>
     {BasicTransferTxindexMetadata}
+      <h3>Basic transfer info</h3>
       <ul>
         <li><b>Fees:</b> {FeeNanos:amount} Bitclout</li>
         <li><b>Input value:</b> {TotalInputNanos:amount} Bitclout</li>
         <li><b>Output value:</b> {TotalOutputNanos:amount} Bitclout</li>
       </ul>
     {/BasicTransferTxindexMetadata}
+    {BitcoinExchangeTxindexMetadata}
+      <h3>Bitcoin exchange info</h3>
+      <ul>
+        <li><b>Bitcoin tx:</b> {BitcoinTxnHash}</li>
+        <li><b>Address:</b> {BitcoinSpendAddress}</li>
+        <li><b>Burned:</b> {SatoshisBurned:btc} BTC</li>
+        <li><b>Credited:</b> {NanosCreated:amount} Bitclout</li>
+        <li><b>Before:</b> {TotalNanosPurchasedBefore:amount} Bitclout</li>
+        <li><b>After:</b> {TotalNanosPurchasedAfter:amount} Bitclout</li>
+      </ul>
+    {/BitcoinExchangeTxindexMetadata}
     {CreatorCoinTxindexMetadata}
       <h3>Creator token info</h3>
       <ul>
