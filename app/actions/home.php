@@ -13,7 +13,7 @@ if ($search) {
   };
 
   if ($ns === 'username') {
-    if (!str_starts_with($ns, '@')) {
+    if (!str_starts_with($search, '@')) {
       $search = '@' . $search;
     }
 
