@@ -18,8 +18,9 @@
       </cell>
     {/user.avatar}
   </grid>
-  <h2>Transactions</h2>
+  <h2>Transactions (page: {global.p} out of {global.last})</h2>
   {>_tx_list Transactions=txs}
+  {>_pagination pagination=global.pagination}
 {/info}
 {err}
   <p>Cannot load address info: {address}</p>

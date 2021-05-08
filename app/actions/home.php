@@ -1,7 +1,10 @@
 <?php
+
+use App\Component\Pagination;
 /**
  * @route home
  * @param string $search
+ * @param uint $p 1
  */
 
 if ($search) {
@@ -27,5 +30,10 @@ if ($search) {
 $api = container('api');
 
 $block_height = result($api->getBLockCount()) - 1;
-$block_heights = array_reverse(range($block_height - 19, $block_height));
+$limit = 20;
+$start_block = $block_height - ($limit * $p) - 1;
+$block_heights = array_reverse(range($start_block, $start_block + $limit - 1));
 $blocks = array_values(result($api->getBlockList($block_heights)));
+
+
+$pagination = Pagination::get('/', $p, ceil($block_height / $limit));

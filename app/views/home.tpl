@@ -17,3 +17,4 @@
     {/blocks}
   </tbody>
 </table>
+{>_pagination}
