@@ -16,7 +16,7 @@ $offset = $p * $limit - $limit;
 if (!$err) {
   $info['txs'] = array_values($info['txs']);
   $last = ceil($info['tx_count'] / $limit);
-  $pagination = Pagination::get('/address/' . $username ?: $address, $p, $last);
+  $pagination = Pagination::get('/address/' . ($username ?: $address), $p, $last);
 }
 
 if ($err) {
