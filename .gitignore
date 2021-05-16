@@ -1,2 +1,5 @@
 env
 app/client/yarn.lock
+.gitsecret/keys/random_seed
+!*.secret
+app/config/app.ini.tpl
