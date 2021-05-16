@@ -174,7 +174,7 @@ trait RequestTrait {
     return match ($this->request_type) {
       'msgpack' => msgpack_unpack($response),
       // This hack is needed to prevent converting numbers like 1.3 to 1.2999999999 cuz PHP is shit in this case
-      'json' => json_decode($response = preg_replace('/"\s*:\s*([0-9]+\.[0-9]+)/ius', '":"$1"', $response), true),
+      'json' => json_decode($response = preg_replace('/"\s*:\s*([0-9]+\.[0-9]+)([,\}\]])/ius', '":"$1$2"', $response), true),
       'binary' => BinaryCodec::create()->unpack($response),
       default => $response,
     };
