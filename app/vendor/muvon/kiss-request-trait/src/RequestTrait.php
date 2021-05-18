@@ -11,6 +11,7 @@ trait RequestTrait {
   protected int $request_timeout = 30;
   protected int $request_ssl_verify = 0;
   protected int $request_keepalive = 20;
+  protected string $request_useragent = 'KISS/Request v0.8.1';
 
   // The contents of the "Accept-Encoding: " header. This enables decoding of the response. Supported encodings are "identity", "deflate", and "gzip". If an empty string, "", is set, a header containing all supported encoding types is sent.
   protected ?string $request_encoding = '';
@@ -18,6 +19,12 @@ trait RequestTrait {
   // Type of the request can be one of json, msgpack, binary, raw
   // In case if not supported we use raw
   protected string $request_type = 'raw';
+
+  // Array containing proxy info with next fields
+  // { host, port, user, password, type }
+  protected array $request_proxy = [];
+
+  protected array $request_json_bigint_keys = [];
 
   protected array $request_handlers = [];
   protected ?CurlMultiHandle $request_mh = null;
@@ -64,7 +71,21 @@ trait RequestTrait {
       CURLOPT_HTTPHEADER => $headers,
       CURLOPT_ENCODING => $this->request_encoding,
       CURLOPT_TCP_KEEPALIVE => $this->request_keepalive,
+      CURLOPT_USERAGENT => $this->request_useragent,
     ];
+
+    if ($this->request_proxy) {
+      $opts[CURLOPT_PROXY] = $this->request_proxy['host'] . ':' . $this->request_proxy['port'];
+      if (isset($this->request_proxy['user'])) {
+        $opts[CURLOPT_PROXYUSERPWD] = $this->request_proxy['user'] . ':' . $this->request_proxy['password'];
+      }
+      $opts[CURLOPT_PROXYTYPE] = match ($this->request_proxy['type'] ?? 'http') {
+        'socks4' => CURLPROXY_SOCKS4,
+        'socks5' => CURLPROXY_SOCKS5,
+        default => CURLPROXY_HTTP,
+      };
+    }
+
     if ($method === 'POST') {
       $opts[CURLOPT_POST] = 1;
       $opts[CURLOPT_POSTFIELDS] = $this->requestEncode($payload);
@@ -132,7 +153,22 @@ trait RequestTrait {
       }
       curl_close($ch);
       if (($httpcode !== 200 && $httpcode !== 201)) {
-        return ['e_request_failed', 'HTTP ' . $httpcode . ': ' . $response];
+        return [match($httpcode) {
+          429 => 'e_http_too_many_request',
+          400 => 'e_http_bad_request',
+          401 => 'e_http_unathorized',
+          403 => 'e_http_forbidden',
+          404 => 'e_http_not_found',
+          405 => 'e_http_method_not_allowed',
+          413 => 'e_http_payload_too_large',
+          414 => 'e_http_not_found',
+          500 => 'e_http_server_error',
+          501 => 'e_http_not_implemented',
+          502 => 'e_http_bad_gateway',
+          503 => 'e_http_service_unavailable',
+          504 => 'e_http_gateway_timeout',
+          default => 'e_request_failed',
+        }, 'HTTP ' . $httpcode . ': ' . $response];
       }
 
       if (!$response) {
@@ -158,7 +194,7 @@ trait RequestTrait {
   protected function requestEncode(array $payload): string {
     return match ($this->request_type) {
       'msgpack' => msgpack_pack($payload),
-      'json' => json_encode($payload),
+      'json' => $this->encodeJson($payload),
       'binary' => BinaryCodec::create()->pack($payload),
       default => http_build_query($payload, false, '&'),
     };
@@ -174,9 +210,18 @@ trait RequestTrait {
     return match ($this->request_type) {
       'msgpack' => msgpack_unpack($response),
       // This hack is needed to prevent converting numbers like 1.3 to 1.2999999999 cuz PHP is shit in this case
-      'json' => json_decode($response = preg_replace('/"\s*:\s*([0-9]+\.[0-9]+)([,\}\]])/ius', '":"$1$2"', $response), true),
+      'json' => json_decode($response = preg_replace('/"\s*:\s*([0-9]+\.[0-9]+)([,\}\]])/ius', '":"$1$2"', $response), true, flags: JSON_BIGINT_AS_STRING),
       'binary' => BinaryCodec::create()->unpack($response),
       default => $response,
     };
+  }
+
+  protected function encodeJson(mixed $data): string {
+    $json = json_encode($data);
+    if ($this->request_json_bigint_keys) {
+      $json = preg_replace('/"(' . implode('|', $this->request_json_bigint_keys) . ')":"([0-9]+)"/ius', '"$1":$2', $json);
+    }
+
+    return $json;
   }
 }

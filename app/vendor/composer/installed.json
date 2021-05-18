@@ -56,17 +56,17 @@
         },
         {
             "name": "muvon/kiss-request-trait",
-            "version": "0.6.0",
-            "version_normalized": "0.6.0.0",
+            "version": "0.8.1",
+            "version_normalized": "0.8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Muvon/php-kiss-request-trait.git",
-                "reference": "6e8733969ecb7c0f6caa7367f60bdc4ff5d59e9b"
+                "reference": "6bdc781443e74804384bbf05278e3bc91110e00a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Muvon/php-kiss-request-trait/zipball/6e8733969ecb7c0f6caa7367f60bdc4ff5d59e9b",
-                "reference": "6e8733969ecb7c0f6caa7367f60bdc4ff5d59e9b",
+                "url": "https://api.github.com/repos/Muvon/php-kiss-request-trait/zipball/6bdc781443e74804384bbf05278e3bc91110e00a",
+                "reference": "6bdc781443e74804384bbf05278e3bc91110e00a",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^10"
             },
-            "time": "2021-04-04T12:50:41+00:00",
+            "time": "2021-05-17T11:03:07+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -104,7 +104,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Muvon/php-kiss-request-trait/issues",
-                "source": "https://github.com/Muvon/php-kiss-request-trait/tree/0.6.0"
+                "source": "https://github.com/Muvon/php-kiss-request-trait/tree/0.8.1"
             },
             "install-path": "../muvon/kiss-request-trait"
         }

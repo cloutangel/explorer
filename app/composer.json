@@ -1,5 +1,5 @@
 {
     "require": {
-        "muvon/kiss-request-trait": "^0.6.0"
+        "muvon/kiss-request-trait": "^0.8.1"
     }
 }

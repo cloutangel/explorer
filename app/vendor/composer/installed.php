@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '414b74a0504ecd00c7b93f1a9c50be55d144819f',
+    'reference' => '45a4f1ff2aee1bedb3bedfbb72e48a497ec22dd3',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '414b74a0504ecd00c7b93f1a9c50be55d144819f',
+      'reference' => '45a4f1ff2aee1bedb3bedfbb72e48a497ec22dd3',
     ),
     'muvon/kiss-binary-codec' => 
     array (
@@ -31,12 +31,12 @@
     ),
     'muvon/kiss-request-trait' => 
     array (
-      'pretty_version' => '0.6.0',
-      'version' => '0.6.0.0',
+      'pretty_version' => '0.8.1',
+      'version' => '0.8.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6e8733969ecb7c0f6caa7367f60bdc4ff5d59e9b',
+      'reference' => '6bdc781443e74804384bbf05278e3bc91110e00a',
     ),
   ),
 );
