@@ -122,8 +122,9 @@ final class App {
    * @return View
    */
   public static function process(): View {
-    if (!isset(static::$action_map)) {
-      static::$action_map = Env::load(config('common.action_map_file'));
+    $action_map_file = config('common.action_map_file');
+    if (!isset(static::$action_map) && is_file($action_map_file)) {
+      static::$action_map = Env::load($action_map_file);
     }
 
     $Request = Request::current();
@@ -1314,6 +1315,7 @@ final class Response {
     415 => 'Unsupported Media Type',
     416 => 'Requested Range Not Satisfiable',
     417 => 'Expectation Failed',
+    429 => 'Too Many Requests',
 
     500 => 'Internal Server Error',
     501 => 'Not Implemented',
