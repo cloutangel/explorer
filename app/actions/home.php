@@ -31,8 +31,8 @@ $api = container('api');
 
 $block_height = result($api->getBLockCount()) - 1;
 $limit = 20;
-$start_block = $block_height - ($limit * $p) - 1;
-$block_heights = array_reverse(range($start_block, $start_block + $limit - 1));
+$start_block = $block_height - ($limit * $p) + 1;
+$block_heights = array_reverse(range($start_block + 1, $start_block + $limit));
 $blocks = array_values(result($api->getBlockList($block_heights)));
 
 
