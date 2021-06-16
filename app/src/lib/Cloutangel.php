@@ -44,7 +44,16 @@ final class Cloutangel {
   }
 
   public function getAddressInfo(string $address, int $offset = 0, int $limit = 100) {
-    return $this->call('address/get/' . $address, ['expand' => true, 'offset' => $offset, 'limit' => $limit]);
+    [$err, $result] = $this->call('address/get/' . $address, ['expand' => true, 'offset' => $offset, 'limit' => $limit]);
+    if ($err) {
+      return [$err, $result];
+    }
+
+    $result['txs'] = array_map(function ($item) {
+      $item['IsMempool'] = $item['BlockHeight'] === -1;
+      return $item;
+    }, $result['txs']);
+    return [null, $result];
   }
 
   protected function call(string $method, array $params = [], $http_method = 'GET') {

@@ -9,7 +9,8 @@
   <tbody>
     {Transactions}
       <tr>
-        <td><a href="/block/{BlockHeight}">{BlockHeight}</a></td>
+        {IsMempool:}<td>mempool</td>
+        {!IsMempool:}<td><a href="/block/{BlockHeight}">{BlockHeight}</a></td>
         <td>{TxnIndexInBlock}</td>
         <td><a href="/tx/{TransactionIDBase58Check}">{TransactionIDBase58Check}</a></td>
         <td>{TransactionType}</td>
