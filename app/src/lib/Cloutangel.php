@@ -50,7 +50,7 @@ final class Cloutangel {
     }
 
     $result['txs'] = array_map(function ($item) {
-      $item['IsMempool'] = $item['BlockHeight'] === -1;
+      $item['IsMempool'] = ($item['BlockHeight'] ?? -1) === -1;
       return $item;
     }, $result['txs']);
     return [null, $result];
