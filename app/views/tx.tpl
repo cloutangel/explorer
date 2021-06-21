@@ -66,6 +66,13 @@
         <li><b>Type:</b> {IsUnfollow}unfollow{/IsUnfollow}{!IsUnfollow}follow{/!IsUnfollow}</li>
       </ul>
     {/FollowTxindexMetadata}
+    {LikeTxindexMetadata}
+      <h3>Like info</h3>
+      <ul>
+        <li><b>Type:</b> {IsUnlinke}unlike{/IsUnlinke}{!IsUnlinke}like{/!IsUnlinke}</li>
+        <li><b>Post:</b> <a href="https://bitclout.com/posts/{PostHashHex}" target="_blank" rel="noopener noreferrer">{PostHashHex}</a></li>
+      </ul>
+    {/LikeTxindexMetadata}
   {/TransactionMetadata}
   <h2>Inputs / Outputs</h2>
   {>_tx_io_list}
