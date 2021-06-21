@@ -73,6 +73,15 @@
         <li><b>Post:</b> <a href="https://bitclout.com/posts/{PostHashHex}" target="_blank" rel="noopener noreferrer">{PostHashHex}</a></li>
       </ul>
     {/LikeTxindexMetadata}
+    {CreatorCoinTransferTxindexMetadata}
+      <h3>Creator coin transfer info</h3>
+      <ul>
+        <li><b>Creator:</b> <a href="https://bitclout.com/u/{CreatorUsername}" target="_blank" rel="noopener noreferrer">{CreatorUsername}</a></li>
+        <li><b>Coins:</b> {CreatorCoinToTransferNanos:amount}</a></li>
+        <li><b>Diamond level:</b> {DiamondLevel}</li>
+        <li><b>Post:</b> <a href="https://bitclout.com/posts/{PostHashHex}" target="_blank" rel="noopener noreferrer">{PostHashHex}</a></li>
+      </ul>
+    {/CreatorCoinTransferTxindexMetadata}
   {/TransactionMetadata}
   <h2>Inputs / Outputs</h2>
   {>_tx_io_list}
