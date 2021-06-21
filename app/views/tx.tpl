@@ -60,6 +60,12 @@
         <li><b>Founder reward:</b> {NewCreatorBasisPoints:points_to_percent}</li>
       </ul>
     {/UpdateProfileTxindexMetadata}
+    {FollowTxindexMetadata}
+      <h3>Follow info</h3>
+      <ul>
+        <li><b>Type:</b> {IsUnfollow}unfollow{/IsUnfollow}{!IsUnfollow}follow{/!IsUnfollow}</li>
+      </ul>
+    {/FollowTxindexMetadata}
   {/TransactionMetadata}
   <h2>Inputs / Outputs</h2>
   {>_tx_io_list}
