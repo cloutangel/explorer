@@ -9,4 +9,4 @@ $api = container('api');
 [$err, $tx] = $api->getTx($hash);
 if ($err) {
   $tx = null;
-}var_dump($tx);
+}
