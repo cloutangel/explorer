@@ -51,6 +51,15 @@
         <li><b>Creator tokens to sell:</b> {CreatorCoinToSellNanos:amount} Token</li>
       </ul>
     {/CreatorCoinTxindexMetadata}
+    {UpdateProfileTxindexMetadata}
+      <h3>Update profile info</h3>
+      <ul>
+        <li><b>Username:</b> {NewUsername}</li>
+        <li><b>Description:</b> {NewDescription}</li>
+        <li><b>Avatar:</b> <img src="{NewProfilePic}" width="64" height="64" alt="{NewUsername}"/></li>
+        <li><b>Founder reward:</b> {NewCreatorBasisPoints:points_to_percent}</li>
+      </ul>
+    {/UpdateProfileTxindexMetadata}
   {/TransactionMetadata}
   <h2>Inputs / Outputs</h2>
   {>_tx_io_list}
